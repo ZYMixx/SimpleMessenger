@@ -1,12 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="90dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginLeft="5dp"
     android:layout_marginRight="5dp"
-    android:layout_marginTop="5dp"
-    android:background="@color/colorPrimary">
+    android:layout_marginTop="2dp"
+    tools:context=".DialogList">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="name"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:layout_gravity="center|left"
+        android:textAllCaps="true"
+        android:layout_marginLeft="65dp"
+        android:layout_marginBottom="10dp"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|left"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="9dp"
+        android:gravity="start"
+        android:singleLine="true"
+        android:text="текст сообщения всё ещё неверояяятно огромный что не позволяет ему"
+        android:textColor="@color/colorGrayForText"
+        android:textSize="16dp"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12dp"
+        android:text="20 мар 2021"
+        android:layout_gravity="end|bottom"
+        android:layout_marginRight="1dp"
+        android:alpha="0.9"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_delimeter_fordialogs"
+        android:layout_gravity="center|bottom"
+        android:layout_marginLeft="6dp"/>
 
     <ImageView
         android:layout_width="60dp"
@@ -14,5 +60,11 @@
         android:layout_gravity="center|left"
         app:srcCompat="@drawable/zeroimg"
         />
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:srcCompat="@drawable/ic_frmae_white"
+        android:layout_gravity="center|left"/>
 
 </FrameLayout>
