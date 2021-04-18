@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/friends_page_id"
     android:layout_width="match_parent"
     android:layout_height="90dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -10,6 +11,7 @@
     tools:context=".DialogList">
 
     <TextView
+        android:id="@+id/friends_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="name"
@@ -24,6 +26,7 @@
         />
 
     <TextView
+        android:id="@+id/last_message_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center|left"
@@ -38,6 +41,7 @@
         />
 
     <TextView
+        android:id="@+id/last_message_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="12dp"
@@ -48,6 +52,7 @@
         />
 
     <ImageView
+        android:id="@+id/delimeter_friends"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/ic_delimeter_fordialogs"
@@ -55,6 +60,7 @@
         android:layout_marginLeft="6dp"/>
 
     <ImageView
+        android:id="@+id/friends_avatar_iv"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_gravity="center|left"
