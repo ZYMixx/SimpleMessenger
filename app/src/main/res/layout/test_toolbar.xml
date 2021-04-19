@@ -23,15 +23,15 @@
         android:layout_marginLeft="63dp"/>
 
     <ImageView
-        android:id="@+id/circularimageView1"
+        android:id="@+id/toolbar_avatar"
         android:layout_width="48dp"
         android:layout_height="48dp"
         app:srcCompat="@drawable/zeroimg"
         android:layout_gravity="left|center"
 
         />
-    <ImageView
 
+    <ImageView
         android:layout_width="48dp"
         android:layout_height="48dp"
         app:srcCompat="@drawable/ic_frmae_primary"

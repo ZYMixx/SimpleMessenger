@@ -1,12 +1,14 @@
 package com.zymixx.simplemessenger;
 
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toolbar;
@@ -14,6 +16,8 @@ import android.widget.Toolbar;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.zip.Inflater;
 
@@ -45,9 +49,20 @@ public class DialogScreen extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    static Drawable uzerRect;
+
     public void makeGUI(){
         //getSupportActionBar().show();
 
+        uzerRect = getDrawable(R.drawable.rectangle_forusermessage);
+
+
+        RecyclerView dialogRV = findViewById(R.id.dialog_rv);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
+        dialogRV.setLayoutManager(linearLayoutManager);
+        DialogRVAdapter adapter =  new DialogRVAdapter();
+        dialogRV.setAdapter(adapter);
     }
 
 }
