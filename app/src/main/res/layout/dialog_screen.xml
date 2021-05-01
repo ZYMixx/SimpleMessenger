@@ -7,9 +7,10 @@
     tools:context=".DialogScreen">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/dialog_rv"
+        android:id="@+id/dialog_screen_rv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"
+        android:paddingBottom="62dp"/>
     
     <FrameLayout
         android:elevation="3dp"

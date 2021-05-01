@@ -1,25 +1,17 @@
 package com.zymixx.simplemessenger;
 
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Adapter;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.Toolbar;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import java.util.zip.Inflater;
 
 public class DialogScreen extends AppCompatActivity {
     androidx.appcompat.widget.Toolbar toolbar;
@@ -29,16 +21,8 @@ public class DialogScreen extends AppCompatActivity {
         setContentView(R.layout.dialog_screen);
 
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle(null);
-        LayoutInflater inflater = LayoutInflater.from(this);
-        View view = inflater.inflate(R.layout.test_toolbar, null);
-        actionBar.setCustomView(view);
-        actionBar.setDisplayShowCustomEnabled(true);
-        makeGUI();
 
-     //   EditText editTextDialog = findViewById(R.id.dialog_main_et);
-        //editTextDialog.tint
+        makeGUI();
 
     }
 
@@ -49,17 +33,30 @@ public class DialogScreen extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    void createMenuAvatarImage(){
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle(null);
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View view = inflater.inflate(R.layout.test_toolbar, null);
+        actionBar.setCustomView(view);
+        actionBar.setDisplayShowCustomEnabled(true);
+    }
+
     static Drawable uzerRect;
+    static Drawable friendsRect;
 
     public void makeGUI(){
-        //getSupportActionBar().show();
+
+        createMenuAvatarImage();
 
         uzerRect = getDrawable(R.drawable.rectangle_forusermessage);
+        friendsRect = getDrawable(R.drawable.rectangle);
 
-
-        RecyclerView dialogRV = findViewById(R.id.dialog_rv);
+        new TestClass().createMap();
+        RecyclerView dialogRV = findViewById(R.id.dialog_screen_rv);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
+        linearLayoutManager.setStackFromEnd(true);
         dialogRV.setLayoutManager(linearLayoutManager);
         DialogRVAdapter adapter =  new DialogRVAdapter();
         dialogRV.setAdapter(adapter);

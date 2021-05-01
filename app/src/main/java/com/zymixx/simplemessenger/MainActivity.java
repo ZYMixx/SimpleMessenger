@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
                     Thread.sleep(2000);
                 } catch (InterruptedException e) {
                     e.printStackTrace(); }
-                Intent intent = new Intent(MainActivity.this, DialogScreen.class);
+                Intent intent = new Intent(MainActivity.this, DialogList.class);
                 startActivity(intent);
             }
         });

@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -30,30 +31,75 @@ class DialogRVAdapter extends RecyclerView.Adapter<DialogRVAdapter.DialogHolder>
 
     @Override
     public void onBindViewHolder(@NonNull DialogHolder holder, int position) {
+            String[] messPull = TestClass.hashMap.get(position);
+        String text = messPull[0];
+        String date = messPull[1];
+        String user = messPull[2];
+        testint++;
+
+        if (user.equals("0")){
+            forUserMassageStyle(holder.itemView, text, date);
+        } else {
+            forFriendMassageStyle(holder.itemView, text, date);
+        }
 
     }
 
     @Override
     public int getItemCount() {
-        return 12;
+        return TestClass.hashMap.size();
     }
+
+
+    public void forFriendMassageStyle(View v, String text, String date){
+        TextView timeTV = v.findViewById(R.id.message_time);
+        TextView textTV = v.findViewById(R.id.message_text);
+        textTV.setText(text);
+        timeTV.setText(date);
+
+        LinearLayout linearLayout = v.findViewById(R.id.message_frame);
+        FrameLayout interFrame = linearLayout.findViewById(R.id.inter_frame_message);
+        linearLayout.setGravity(Gravity.LEFT);
+
+        ImageView imageView = v.findViewById(R.id.second_test_frame);
+        ImageView imageView2 = v.findViewById(R.id.first_test_frame);
+        imageView.setVisibility(View.INVISIBLE);
+        imageView2.setVisibility(View.VISIBLE);
+
+    }
+
+    public void forUserMassageStyle(View v, String text, String date){
+
+        TextView timeTV = v.findViewById(R.id.message_time);
+        TextView textTV = v.findViewById(R.id.message_text);
+        textTV.setText(text);
+        timeTV.setText(date);
+
+
+        LinearLayout linearLayout = v.findViewById(R.id.message_frame);
+        FrameLayout interFrame = linearLayout.findViewById(R.id.inter_frame_message);
+        linearLayout.setGravity(Gravity.RIGHT);
+
+        ImageView imageView = v.findViewById(R.id.first_test_frame);
+        ImageView imageView2 = v.findViewById(R.id.second_test_frame);
+        imageView.setVisibility(View.INVISIBLE);
+        imageView2.setVisibility(View.VISIBLE);
+
+
+
+    }
+
 
     static int testint = 0;
 
     class DialogHolder extends RecyclerView.ViewHolder{
 
+
         DialogHolder(View v){
             super(v);
-            testint++;
-            if (testint == 4){
-                LinearLayout frameLayout = v.findViewById(R.id.message_frame);
-                FrameLayout interFrame = frameLayout.findViewById(R.id.inter_frame_message);
-                frameLayout.setGravity(Gravity.RIGHT);
-                interFrame.setBackground(DialogScreen.uzerRect);
-              //  interFrame.setForegroundGravity(Gravity.RIGHT);
-                TextView text = v.findViewById(R.id.message_text);
-                text.setText("ЛЮБОЙ ДРУГОЙ ТЕКСТ");
-            }
+            System.out.println(getAdapterPosition());
         }
+
+
     }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/friends_page_id"
+    android:id="@+id/friends_page_id_frame"
     android:layout_width="match_parent"
     android:layout_height="90dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -60,14 +60,14 @@
         android:layout_marginLeft="6dp"/>
 
     <ImageView
-        android:id="@+id/friends_avatar_iv"
+        android:id="@+id/friends_avatar_fl"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_gravity="center|left"
         app:srcCompat="@drawable/zeroimg"
         />
     <ImageView
-        android:id="@+id/avatar"
+        android:id="@+id/white_frame_avatar_fl"
         android:layout_width="60dp"
         android:layout_height="60dp"
         app:srcCompat="@drawable/ic_frmae_white"
