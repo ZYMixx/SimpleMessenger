@@ -60,8 +60,9 @@ class RVAdapterFriendsList extends RecyclerView.Adapter<RVAdapterFriendsList.Fri
             View.OnClickListener toProfileButton = new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast toast = Toast.makeText(v.getContext(), "to Profile", Toast.LENGTH_LONG);
-                    toast.show();
+                    Intent intent = new Intent(v.getContext(), Profile.class);
+                    v.getContext().startActivity(intent);
+
                 }
             };
 

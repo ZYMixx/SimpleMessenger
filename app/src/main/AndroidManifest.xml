@@ -22,7 +22,10 @@
         <activity android:name=".DialogScreen"
             android:windowSoftInputMode="stateHidden|adjustResize">
         </activity>
-
+        <activity android:name=".LoginUp">
+        </activity>
+        <activity android:name=".Profile">
+        </activity>
     </application>
 
 </manifest>

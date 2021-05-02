@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SimpleMessenger</string>
+    <string name="MyString"><u>underlined text</u></string>
+
 </resources>

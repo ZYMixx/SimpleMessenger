@@ -11,8 +11,9 @@ public class DialogList extends AppCompatActivity {
     RecyclerView rvDialogFriends;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        setContentView(R.layout.dialog_friends);
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.dialog_friends);
+
 
         rvDialogFriends = findViewById(R.id.rv_friends_id);
 
